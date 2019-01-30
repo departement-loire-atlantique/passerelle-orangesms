@@ -1,0 +1,12 @@
+Source: python-passerelle-orangesms
+Section: python
+Priority: optional
+Maintainer: Julien BAYLE <julien.bayle@loire-atlantique.fr>
+Build-Depends: python-setuptools (>= 0.6b3), python-all (>= 2.6.6-3), debhelper (>= 9), python-django
+Standards-Version: 3.9.1
+Homepage: https://github.com/departement-loire-atlantique/passerelle-orangesms
+
+Package: python-passerelle-orangesms
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}
+Description: Passerelle connector to contact everywhere REST API v1.2
