@@ -9,7 +9,7 @@ class OrangeAPI:
     URL_GROUPS = BASE_API + "groups"
     URL_DIFFUSION = BASE_API + "groups/%s/diffusion-requests"
     
-    def __init__(self, username, password):
+    def __init__(self, test, username, password):
         self.username = username
         self.password = password
         self.authorization_header = {}
