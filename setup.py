@@ -58,7 +58,7 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
     ],
-    install_requires=['django>=1.7, <1.8',
+    install_requires=['django >= 1.8, <1.12',
         ],
     zip_safe=False,
     cmdclass={
