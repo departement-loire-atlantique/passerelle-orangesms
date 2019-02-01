@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
                 ('users', models.ManyToManyField(to='base.ApiUser', blank=True)),
             ],
             options={
-                'db_table': 'sms_orange_rest',
+                'db_table': 'sms_orangerest',
                 'verbose_name': 'Orange REST SMS',
             },
             bases=(models.Model, passerelle.sms.SMSGatewayMixin),
