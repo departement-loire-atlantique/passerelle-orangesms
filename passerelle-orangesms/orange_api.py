@@ -57,9 +57,11 @@ class OrangeAPI:
                 }
             })
         
-        r = requests.post(self.URL_DIFFUSION % group_id, data=payload, headers=headers)
-        if r.status_code != 201:
-            raise Exception("Send SMS failed %s, %s" % (r.status_code, r.text))
+        rq = requests.post(self.URL_DIFFUSION % group_id, data=payload, headers=headers)
+        if rq.status_code == 201:
+            return json.loads(rq.text)
+        
+        raise Exception("Send SMS failed %s, %s" % (rq.status_code, rq.text))
        
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
