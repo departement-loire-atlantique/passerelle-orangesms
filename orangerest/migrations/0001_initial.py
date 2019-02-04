@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.db import models, migrations
+from django.db import migrations, models
 import passerelle.sms
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('base', '0001_initial'),
+        ('base', '0010_loggingparameters_trace_emails'),
     ]
 
     operations = [
@@ -16,9 +16,9 @@ class Migration(migrations.Migration):
             name='OrangeRestSMSGateway',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('title', models.CharField(verbose_name='Title', max_length=50)),
-                ('slug', models.SlugField(verbose_name='Identifier', unique=True)),
+                ('title', models.CharField(max_length=50, verbose_name='Title')),
                 ('description', models.TextField(verbose_name='Description')),
+                ('slug', models.SlugField(unique=True, verbose_name='Identifier')),
                 ('username', models.CharField(max_length=64)),
                 ('password', models.CharField(max_length=64)),
                 ('groupname', models.CharField(max_length=64)),
@@ -30,6 +30,6 @@ class Migration(migrations.Migration):
                 'db_table': 'sms_orangerest',
                 'verbose_name': 'Orange REST SMS',
             },
-            bases=(models.Model, passerelle.sms.SMSGatewayMixin),
+            bases=(models.Model, passerelle.sms.SMSGatewayMixin,),
         ),
     ]

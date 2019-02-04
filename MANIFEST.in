@@ -1,3 +1,3 @@
-recursive-include passerelle-orangesms *.py
+recursive-include orangerest *.py
 include MANIFEST.in
 include README.md
