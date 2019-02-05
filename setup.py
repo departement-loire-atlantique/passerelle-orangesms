@@ -41,11 +41,11 @@ def get_version():
     return '0'
 
 setup(
-    name='orangerest',
+    name='passerelle-orangesms',
     version=get_version(),
-    author='Guillaume Gautier',
-    author_email='guillaume.gautier@loire-atlantique.fr',
+    author='Julien Bayle <julien.bayle@loire-atlantique.fr>, Guillaume Gautier <guillaume.gautier@loire-atlantique.fr>',
     packages=find_packages(),
+    include_package_data=True,
     url='https://github.com/departement-loire-atlantique/passerelle-orangesms',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
