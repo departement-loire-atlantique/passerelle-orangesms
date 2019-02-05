@@ -17,8 +17,21 @@ Par exemple, dans `/etc/passerelle/settings.d/loire-atlantique.py`, ajouter :
 
 ## Mise à jour
 
+```
 pip install passerelle-orangesms --upgrade
+```
 
 ## Désinstallation
 
+```
 pip uninstall passerelle-orangesms
+```
+
+## Release
+
+Pour marquer le commit b4dda3fbd58e en tant que version 0.5, faire:
+
+```
+git tag -a v0.5 b4dda3fbd58e
+git push origin v0.5
+```
