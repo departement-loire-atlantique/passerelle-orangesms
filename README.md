@@ -4,9 +4,10 @@ Connecteur Publik Passerelle pour le service d'envoi de SMS Orange Contact Every
 
 ## Installation
 
-pip install passerelle-orangesms
+pip install git+https://github.com/departement-loire-atlantique/passerelle-orangesms#egg=passerelle-orangesms
 
-Ajouter l'application dans les paramètres de passerelle. Par exemple, dans `/etc/passerelle/settings.d/loire-atlantique.py`, ajouter :
+Ajouter l'application dans les paramètres de passerelle. 
+Par exemple, dans `/etc/passerelle/settings.d/loire-atlantique.py`, ajouter :
 
 ```
     INSTALLED_APPS += ('passerelle-orangesms',)
