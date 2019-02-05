@@ -9,21 +9,8 @@ import sys
 
 from setuptools.command.install_lib import install_lib as _install_lib
 from distutils.command.build import build as _build
-from distutils.command.sdist import sdist
 from distutils.cmd import Command
 from setuptools import setup, find_packages
-
-class eo_sdist(sdist):
-    def run(self):
-        if os.path.exists('VERSION'):
-            os.remove('VERSION')
-        version = get_version()
-        version_file = open('VERSION', 'w')
-        version_file.write(version)
-        version_file.close()
-        sdist.run(self)
-        if os.path.exists('VERSION'):
-            os.remove('VERSION')
 
 def get_version():
     if os.path.exists('VERSION'):
@@ -56,12 +43,10 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
     ],
-    install_requires=['django >= 1.8, <1.12',
-        ],
+    install_requires=['django >= 1.8, <1.12',],
     zip_safe=False,
     cmdclass={
         'build': _build,
 	'install_lib': _install_lib,
-	'sdist': eo_sdist,
     }
 )
