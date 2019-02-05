@@ -36,7 +36,6 @@ def get_version():
         result = p.communicate()[0]
         if p.returncode == 0:
             version = result.split()[0][1:]
-            version = version.replace('-', '.')
             return version
     return '0'
 
