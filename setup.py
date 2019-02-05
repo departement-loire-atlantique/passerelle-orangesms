@@ -8,9 +8,20 @@ import subprocess
 import sys
 
 from setuptools.command.install_lib import install_lib as _install_lib
+from setuptools.command.install import _install
 from distutils.command.build import build as _build
 from distutils.cmd import Command
 from setuptools import setup, find_packages
+
+class PostInstallCommand(_install):
+    """Post-installation for installation mode. Activate plugin for passerelle"""
+    def run(self):
+        if os.path.exists('/etc/passerelle/settings.d'):
+	    with open('/etc/passerelle/settings.d/passerelle-orangesms.py', 'w+') as f:
+	        f.write("if 'passerelle_orangesms' not in INSTALLED_APPS:\n")
+		f.write("  INSTALLED_APPS += ('passerelle_orangesms',)\n")
+		f.write("  TENANT_APPS += ('passerelle_orangesms',)")
+        _install.run(self)
 
 def get_version():
     if os.path.exists('VERSION'):
@@ -48,5 +59,6 @@ setup(
     cmdclass={
         'build': _build,
 	'install_lib': _install_lib,
+	'install': PostInstallCommand,
     }
 )
