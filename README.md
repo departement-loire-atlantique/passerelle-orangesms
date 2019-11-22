@@ -27,6 +27,8 @@ Il est possible de tester le fonctionnement des envois avec le lien *Test SMS* d
 
 Une fois la configuration dans Publik effectuée, l'action de workflow "SMS" est disponible pour les workflows.
 
+L'action de workflow "SMS" est liée au service web Orange REST SMS configuré dans l'instance Publik. Il n'est pas possible de créer plusieurs types d'actions de workflow "SMS" liés pour chacun à un compte dédié de l'API SMS Orange. S'il est nécessaire d'avoir des envois de SMS avec plusieurs comptes, la solution est d'utiliser directement le service web Orange en passant par une action de worklow "Webservice" plutôt que "SMS".
+
 ## Désinstallation
 
 ```
