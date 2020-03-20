@@ -5,10 +5,9 @@ from . import orange_api
 from requests import RequestException
 
 from passerelle.utils.jsonresponse import APIError
-from passerelle.base.models import BaseResource
-from passerelle.sms import SMSGatewayMixin
+from passerelle.base.models import SMSResource
 
-class OrangeRestSMSGateway(BaseResource, SMSGatewayMixin):
+class OrangeRestSMSGateway(SMSResource):
 
     username = models.CharField(verbose_name='Identifiant', max_length=64)
     password = models.CharField(verbose_name='Mot de passe', max_length=64)

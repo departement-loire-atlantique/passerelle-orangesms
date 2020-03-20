@@ -2,8 +2,6 @@
 from __future__ import unicode_literals
 
 from django.db import migrations, models
-import passerelle.sms
-
 
 class Migration(migrations.Migration):
 
@@ -30,6 +28,6 @@ class Migration(migrations.Migration):
                 'db_table': 'sms_orangerest',
                 'verbose_name': 'Orange REST SMS',
             },
-            bases=(models.Model, passerelle.sms.SMSGatewayMixin,),
+            bases=(models.Model,),
         ),
     ]
