@@ -5,7 +5,7 @@ from . import orange_api
 from requests import RequestException
 
 from passerelle.utils.jsonresponse import APIError
-from passerelle.base.models import SMSResource
+from passerelle.sms.models import SMSResource
 
 class OrangeRestSMSGateway(SMSResource):
 
