@@ -1,3 +1,5 @@
+# OBSOLÈTE - ce connecteur n'a plus d'utilité, Entr'ouvert l'ayant intégré dans Publik.
+
 # passerelle-orangesms
 
 Connecteur Publik Passerelle pour le service d'envoi de SMS Orange Contact Everyone REST API v1.2.
@@ -33,6 +35,7 @@ L'action de workflow "SMS" est liée au service web Orange REST SMS configuré d
 
 ```
 pip uninstall passerelle-orangesms
+rm /etc/passerelle/settings.d/passerelle-orangesms.py
 ```
 
 ## Release
